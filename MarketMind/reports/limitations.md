@@ -1,0 +1,11 @@
+# Limitations
+- One secondary data source; no cross-check (nepalstock.com, Mendeley unreachable from sandbox). Index revisions, scraping errors and rounding are possible.
+- Single final test window (644 sessions, ~2.7 years, mostly one market regime). Subperiod results vary.
+- No literature review; no novelty claim.
+- Trading simulation (`backtest.py`) NOT implemented. No claim about profit. Costs/taxes/slippage unmodelled.
+- Notebooks not created; exploration and audit live in `src/run.py` and `reports/`.
+- Index close is a level aggregate; stale/thin-trading effects can produce autocorrelation that is not exploitable.
+- Test set seen twice (reporting-bug rerun). Holm correction covers 6 final comparisons only, not the validation grid or design choices.
+- Bootstrap is approximate (block length 10 not tuned). No Diebold-Mariano test, no accuracy-vs-previous-direction test.
+- Calendar effects, volume beyond turnover ratio, individual stocks, and deep learning not examined.
+- The test period has been examined three times (main test, rerun after a reporting bug, post-hoc paired test). The paired-test p-value is not corrected for this. A clean evaluation now requires new data (sessions after 2026-10-26) or a second historical period.

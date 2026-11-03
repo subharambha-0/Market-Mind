@@ -1,0 +1,22 @@
+{
+ "logistic_clf": {
+  "C": 0.1
+ },
+ "rf_clf": {
+  "min_samples_leaf": 30
+ },
+ "hgb_clf": {
+  "learning_rate": 0.03,
+  "max_depth": 3
+ },
+ "ridge_reg": {
+  "alpha": 10.0
+ },
+ "rf_reg": {
+  "min_samples_leaf": 30
+ },
+ "hgb_reg": {
+  "learning_rate": 0.03,
+  "max_depth": 3
+ }
+}

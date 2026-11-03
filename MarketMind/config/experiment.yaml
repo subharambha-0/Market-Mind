@@ -1,0 +1,28 @@
+# MarketMind experiment protocol -- fixed BEFORE any model was evaluated.
+data:
+  raw_path: data/raw/NEPSE_INDEX.csv
+  max_gap_days: 20         # starts a new segment. Was 7 in the first draft; changed to 20 BEFORE any model run because
+                           # 7 split at ordinary 8-11 day festival closures. Only the 2020 closure (47-51 d) breaks the series.
+  suspicious_abs_return: 0.10
+sample:
+  primary_start: "2016-07-01"   # chosen from DATA QUALITY only: OHLC fields and per_change are
+                                # internally consistent from here (see reports/data_audit.md)
+splits:
+  dev_end: "2023-12-31"         # dev = primary_start .. dev_end (used for model selection)
+  val_start: "2021-01-01"       # walk-forward validation block inside dev
+  test_start: "2024-01-01"      # final test: touched once, after hyperparameters are frozen
+  refit_every: 21               # sessions between refits (walk-forward, expanding window)
+features:
+  min_warmup_sessions: 50
+bootstrap:
+  block_length: 10
+  n_boot: 2000
+  seed: 20261027
+primary_metrics:
+  direction: "Brier skill score vs expanding training base-rate forecast"
+  return: "Out-of-sample R^2 vs expanding historical-mean forecast"
+grids:
+  logistic: {C: [0.01, 0.1, 1.0]}
+  ridge: {alpha: [10.0, 100.0, 1000.0]}
+  rf: {min_samples_leaf: [30, 80]}
+  hgb: {learning_rate: [0.03], max_depth: [2, 3]}

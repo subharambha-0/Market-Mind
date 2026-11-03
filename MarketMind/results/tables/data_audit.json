@@ -1,0 +1,42 @@
+{
+ "rows_raw": 6721,
+ "rows_clean": 6721,
+ "first_date": "1997-07-20",
+ "last_date": "2026-10-26",
+ "n_segments": 6,
+ "gaps_over_limit": [
+  {
+   "date": "1998-02-15",
+   "gap_days": "33.0"
+  },
+  {
+   "date": "1998-05-14",
+   "gap_days": "31.0"
+  },
+  {
+   "date": "2015-05-24",
+   "gap_days": "31.0"
+  },
+  {
+   "date": "2020-05-12",
+   "gap_days": "51.0"
+  },
+  {
+   "date": "2020-06-29",
+   "gap_days": "47.0"
+  }
+ ],
+ "n_suspicious_returns": 2,
+ "n_zero_returns": 138,
+ "n_flat_ohlc": 4343,
+ "n_ohlc_inconsistent": 22,
+ "model_rows": 2309,
+ "model_first": "2016-07-03",
+ "model_last": "2026-10-16",
+ "dev_rows": 1665,
+ "val_rows": 708,
+ "test_rows": 644,
+ "up_share_dev": 0.46066066066066064,
+ "up_share_test": 0.4751552795031056,
+ "zero_returns_in_model_table": 1
+}
