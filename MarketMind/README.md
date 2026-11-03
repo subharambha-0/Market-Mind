@@ -12,10 +12,6 @@ An honest test of one question: **can public historical data predict whether the
 
 Read `reports/research_report.md`, then `reports/limitations.md`.
 
-## How it was built (AI disclosure)
-- **Author / direction:** Subha chose the research question and project plan, and ran the project in Google Colab.
-- **Claude (Anthropic's AI assistant) did the following in a chat session:** searched for and downloaded the data, wrote all code in `src/` and `tests/`, ran the experiments, fixed bugs, and wrote this README, the reports and the tables. Results come from code that actually ran, and the experiment log records the steps, including a reporting bug that was found and corrected.
-- **Author's earlier work:** *(Subha: describe here, in your own words, what you built or planned before using Claude, and what you changed or checked yourself.)*
 - Please verify claims by running the code. Nothing here should be taken on trust.
 
 ## Data
